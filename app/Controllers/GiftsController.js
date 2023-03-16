@@ -7,7 +7,12 @@ import { setHTML } from "../Utils/Writer.js";
 function _drawGifts() {
   const gifts = appState.gifts
   let template = ''
-  gifts.forEach(g => template += g.GiftsTemplate)
+  gifts.forEach(g => {
+    if (g.opened == true) {
+      template += g.GiftsTemplate
+    }
+    else { template += g.WrappedGiftsTemplate }
+  })
   setHTML('gifts-template', template)
 }
 
