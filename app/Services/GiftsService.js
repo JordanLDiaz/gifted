@@ -7,7 +7,7 @@ class GiftsService {
     const res = await GiftApi.get()
     // console.log(res.data, 'getting gifts');
     appState.gifts = res.data.map(g => new Gift(g))
-    // console.log(appState.gifts, 'this is appstate');
+    console.log(appState.gifts, 'getting gifts');
   }
 
   setActive(id) {

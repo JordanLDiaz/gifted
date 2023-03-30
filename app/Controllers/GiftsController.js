@@ -34,6 +34,7 @@ export class GiftsController {
   }
 
   setActive(id) {
+    window.event.preventDefault()
     giftsService.setActive(id)
     // console.log(id);
   }
@@ -55,6 +56,7 @@ export class GiftsController {
   async openGift(id) {
     try {
       // console.log('this is open', id)
+      window.event.preventDefault()
       await giftsService.openGift(id)
     } catch (error) {
       Pop.error(error.message)
